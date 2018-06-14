@@ -9,7 +9,7 @@
 import UIKit
 
 struct Links {
-    static let arrayOfLinks: [String] = ["https://scontent-mad1-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/12093320_175788646097650_1777493373_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11374708_899719610075462_2079944361_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-prn/t51.2885-15/e15/10453926_1525032927724797_562310669_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1172839_567556833321932_1527333660_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xtf1/t51.2885-15/e15/10513792_495014900600282_1769370509_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/11267034_1587652828164926_739789033_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/10919668_1403608136601456_1011441104_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/12070633_1679386142347942_1275333499_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xap1/l/t51.2885-15/e15/11372383_937098472979017_670472374_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11372175_104769283194557_114794195_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-ash/t51.2885-15/e15/10723669_1572438389651503_1533272280_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/891457_764319533631305_2078191492_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xft1/t51.2885-15/e15/891425_1525578637671412_1116020074_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/1173072_677701488928350_961482092_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xtf1/t51.2885-15/e35/11351795_925257324218183_1231567850_n.jpg", "https://scontent-mad1-1.cdninstagram.com/hphotos-xft1/t51.2885-15/e35/11248985_1641164812807481_1190120378_n.jpg"]
+    static let arrayOfLinks: [String] = ["https://digitaldeleon.com/wp-content/uploads/2018/04/digitaldeleon-com-2018-04-20-10-0426-235824.jpg", "https://cdn1.royalcanin.es/wp-content/uploads/2017/01/gatos-de-interior.jpg", "https://www.notigatos.es/wp-content/uploads/2017/10/gato-encima-de-la-mesa-830x553.jpg", "http://fotografias.lasexta.com/clipping/cmsimages02/2016/03/13/9A1C357F-2FDD-4DD0-BFE5-5AAA2C81F6FB/58.jpg", "http://rumbos.viapais.com.ar/wp-content/uploads/2017/08/20170809183102_29384092_0_body-760x433-c-center.jpg", "https://www.hogarmania.com/archivos/201610/como-ven-los-gatos-XxXx80.jpg", "https://www.webconsultas.com/sites/default/files/styles/encabezado_articulo/public/articulos/intoxicacion-gatos.jpg?itok=ZEdt0aON", "http://3.bp.blogspot.com/-KZ0-FUd12Rw/U7Rs9WS2WzI/AAAAAAAAAA4/Eue_j6DV3uU/s1600/gato-siam%25C3%25A9s-muy-tierno.jpg", "https://static.vix.com/es/sites/default/files/styles/large/public/btg/curiosidades.batanga.com/files/8-sorprendentes-cosas-que-no-sabias-sobre-los-gatos-4.jpg?itok=SBwPbF17"]
 }
 
 class ViewController: CustomAlertDelegate, DownloadManagerProtocol
@@ -33,7 +33,7 @@ class ViewController: CustomAlertDelegate, DownloadManagerProtocol
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func downloadFile(but: UIButton)
+    @IBAction func downloadFile(_ but: UIButton)
     {
         let alert = CustomAlertViewController(title: "Please confirm", message: "Are you sure you want to download the file?", delegate: self)
         downloadingBtn = but
@@ -46,9 +46,9 @@ class ViewController: CustomAlertDelegate, DownloadManagerProtocol
         progressController.reset()
         
         for but: UIButton in btns {
-            but.enabled = true
-            but.setBackgroundImage(nil, forState: .Normal)
-            but.setTitle("Press to download\nrandom image", forState: .Normal)
+            but.isEnabled = true
+            but.setBackgroundImage(nil, for: UIControlState())
+            but.setTitle("Press to download\nrandom image", for: UIControlState())
         }
     }
     
@@ -64,7 +64,7 @@ class ViewController: CustomAlertDelegate, DownloadManagerProtocol
     
     //MARK CustomAlertDelegate
     
-    override func pressedAlertButton(buttonIndex: Int)
+    override func pressedAlertButton(_ buttonIndex: Int)
     {
         if buttonIndex == AlertButtons.kAccept {
             progressController.reset()
@@ -83,20 +83,20 @@ class ViewController: CustomAlertDelegate, DownloadManagerProtocol
     
     //MARK DownloadManagerProtocol
     
-    func downloadedFileAtPath(path: NSURL)
+    func downloadedFileAtPath(_ path: URL)
     {
         if downloadingBtn == nil {
             downloadingBtn = btns[completedDownloads]
-            completedDownloads++
+            completedDownloads += 1
         }
         
-        downloadingBtn.setBackgroundImage(UIImage(data: NSData(contentsOfURL: path)!), forState: .Normal)
-        downloadingBtn.enabled = false
-        downloadingBtn.setTitle("", forState: .Normal)
+        downloadingBtn.setBackgroundImage(UIImage(data: try! Data(contentsOf: path)), for: UIControlState())
+        downloadingBtn.isEnabled = false
+        downloadingBtn.setTitle("", for: UIControlState())
         downloadingBtn = nil
     }
     
-    func downloadedMbytesFromTotal(downloaded: Int64, total: Int64)
+    func downloadedMbytesFromTotal(_ downloaded: Int64, total: Int64)
     {
         progressController.setProgressDownload(downloaded, total: total)
     }
@@ -104,7 +104,7 @@ class ViewController: CustomAlertDelegate, DownloadManagerProtocol
     
     //MARK UIViewController
     
-    override func prefersStatusBarHidden() -> Bool
+    override var prefersStatusBarHidden : Bool
     {
         return true
     }

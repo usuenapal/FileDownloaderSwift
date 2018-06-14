@@ -10,7 +10,7 @@ import UIKit
 
 protocol DownloadManagerProtocol {
     //Called when the file has been download and saved on Documents directory
-    func downloadedFileAtPath(path: NSURL)
+    func downloadedFileAtPath(_ path: URL)
     //Called during the downlod to manage UI information
-    func downloadedMbytesFromTotal(downloaded: Int64, total: Int64)
+    func downloadedMbytesFromTotal(_ downloaded: Int64, total: Int64)
 }

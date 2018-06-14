@@ -19,28 +19,28 @@ class ProgressController: NSObject
         downloadedBytes = []
         totalBytes = []
         
-        progressBar.hidden = true
+        progressBar.isHidden = true
         progressBar.setProgress(0.0, animated: false)
     }
     
-    func setProgressDownload(downloaded: Int64, total: Int64)
+    func setProgressDownload(_ downloaded: Int64, total: Int64)
     {
         if !totalBytes!.contains(total) {
             totalBytes!.append(total)
             downloadedBytes!.append(downloaded)
         } else {
-            let i = totalBytes?.indexOf(total)
+            let i = totalBytes?.index(of: total)
             downloadedBytes![i!] = downloaded
         }
         
-        let totalSum = totalBytes!.reduce(0, combine: +)
-        let downSum = downloadedBytes!.reduce(0, combine: +)
+        let totalSum = totalBytes!.reduce(0, +)
+        let downSum = downloadedBytes!.reduce(0, +)
         let progress = Float(downSum)/Float(totalSum)
         
         if progressBar.progress < progress {
             progressBar.setProgress(progress, animated: true)
         }
         
-        progressBar.hidden = downSum == totalSum
+        progressBar.isHidden = downSum == totalSum
     }
 }

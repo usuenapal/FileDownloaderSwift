@@ -10,9 +10,9 @@ import UIKit
 
 protocol CustomAlertProtocol {
     //Called when the user pressed a button in CustomAlertController
-    func pressedAlertButton(buttonIndex: Int)
+    func pressedAlertButton(_ buttonIndex: Int)
 }
 
 class CustomAlertDelegate: UIViewController, CustomAlertProtocol {
-    func pressedAlertButton(buttonIndex: Int) {}
+    func pressedAlertButton(_ buttonIndex: Int) {}
 }
