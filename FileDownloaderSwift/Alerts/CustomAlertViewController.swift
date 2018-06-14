@@ -43,15 +43,15 @@ class CustomAlertViewController: UIAlertController
     
     func showConfirmationAlert()
     {
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: {
             (action:UIAlertAction!) in self.delegate.pressedAlertButton(AlertButtons.kCancel)
         })
-        let acceptAction = UIAlertAction(title: "Download", style: .Default, handler: {
+        let acceptAction = UIAlertAction(title: "Download", style: .default, handler: {
             (action:UIAlertAction!) in self.delegate.pressedAlertButton(AlertButtons.kAccept)
         })
         
         self.addAction(acceptAction)
         self.addAction(cancelAction)
-        self.delegate.presentViewController(self, animated: true, completion: nil)
+        self.delegate.present(self, animated: true, completion: nil)
     }
 }

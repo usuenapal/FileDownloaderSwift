@@ -8,45 +8,44 @@
 
 import UIKit
 
-class DownloadManager: NSObject, NSURLSessionDelegate, NSURLSessionDownloadDelegate
+class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate
 {
-    var session: NSURLSession
-    var destinationUrl: NSURL
+    var session: Foundation.URLSession
+    var destinationUrl: URL?
     var delegate: DownloadManagerProtocol
     
     init(delegate: DownloadManagerProtocol)
     {
-        session = NSURLSession()
-        destinationUrl = NSURL()
+        session = Foundation.URLSession()
         self.delegate = delegate
         
         super.init()
     }
     
-    private func getSessionConfiguration() -> NSURLSessionConfiguration
+    fileprivate func getSessionConfiguration() -> URLSessionConfiguration
     {
-        let conf = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-        conf.requestCachePolicy = .ReloadIgnoringLocalAndRemoteCacheData
-        conf.URLCache = nil
+        let conf = URLSessionConfiguration.ephemeral
+        conf.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        conf.urlCache = nil
         conf.timeoutIntervalForResource = 3600
         
         return conf
     }
     
-    private func openSession()
+    fileprivate func openSession()
     {
-        session = NSURLSession(configuration: self.getSessionConfiguration(), delegate: self, delegateQueue: NSOperationQueue.mainQueue())
+        session = Foundation.URLSession(configuration: self.getSessionConfiguration(), delegate: self, delegateQueue: OperationQueue.main)
     }
     
-    private func closeSession()
+    fileprivate func closeSession()
     {
         session.invalidateAndCancel()
     }
     
-    private func moveToDestinationFromPath(path: NSURL)
+    fileprivate func moveToDestinationFromPath(_ path: URL)
     {
         do {
-            try NSFileManager.defaultManager().moveItemAtURL(path, toURL: destinationUrl)
+            try FileManager.default.moveItem(at: path, to: destinationUrl!)
         } catch {
             
         }
@@ -54,32 +53,32 @@ class DownloadManager: NSObject, NSURLSessionDelegate, NSURLSessionDownloadDeleg
     
     //MARK Public funcs
     
-    func downloadFileForUrl(url: String)
+    func downloadFileForUrl(_ url: String)
     {
         self.openSession()
         
-        let nameFile = url.componentsSeparatedByString("/").last!
-        var docsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let nameFile = url.components(separatedBy: "/").last!
+        var docsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         docsPath = "\(docsPath)/\(nameFile)"
-        destinationUrl = NSURL(fileURLWithPath: docsPath)
+        destinationUrl = URL(fileURLWithPath: docsPath)
         
-        let download = session.downloadTaskWithURL(NSURL(string: url)!)
+        let download = session.downloadTask(with: URL(string: url)!)
         download.resume()
     }
     
     
     //MARK NSURLSessionDelegate
     
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL)
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL)
     {
         self.moveToDestinationFromPath(location)
         downloadTask.cancel()
         self.closeSession()
         
-        self.delegate.downloadedFileAtPath(destinationUrl)
+        self.delegate.downloadedFileAtPath(destinationUrl!)
     }
     
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64)
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64)
     {
         self.delegate.downloadedMbytesFromTotal(totalBytesWritten/1000, total: totalBytesExpectedToWrite/1000)
     }
