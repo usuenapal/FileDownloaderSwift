@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EZ0-mg-art" userLabel="1">
-                    <rect key="frame" x="0.0" y="19" width="186.5" height="313.5"/>
+                    <rect key="frame" x="0.0" y="60" width="187.5" height="303.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal">
                         <string key="title">Press to download
@@ -37,19 +38,8 @@ random image</string>
                         <action selector="downloadFile:" destination="-1" eventType="touchUpInside" id="zZz-KE-42C"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="X9R-XJ-dBT" userLabel="2">
-                    <rect key="frame" x="188.5" y="19" width="186.5" height="313.5"/>
-                    <state key="normal">
-                        <string key="title">Press to download
-random image</string>
-                        <color key="titleColor" red="0.14455955619999999" green="0.40339107790000001" blue="0.59890172100000005" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="downloadFile:" destination="-1" eventType="touchUpInside" id="ZRv-WR-Pfx"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="3" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fyk-Ea-lyw" userLabel="3">
-                    <rect key="frame" x="0.0" y="260" width="159" height="220"/>
+                <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fyk-Ea-lyw" userLabel="3">
+                    <rect key="frame" x="0.0" y="363.5" width="187.5" height="303.5"/>
                     <state key="normal">
                         <string key="title">Press to download
 random image</string>
@@ -59,8 +49,8 @@ random image</string>
                         <action selector="downloadFile:" destination="-1" eventType="touchUpInside" id="hAj-x8-KAC"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="4" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-uk-3YL" userLabel="4">
-                    <rect key="frame" x="161" y="260" width="159" height="220"/>
+                <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-uk-3YL" userLabel="4">
+                    <rect key="frame" x="187.5" y="363.5" width="187.5" height="303.5"/>
                     <state key="normal">
                         <string key="title">Press to download
 random image</string>
@@ -70,25 +60,11 @@ random image</string>
                         <action selector="downloadFile:" destination="-1" eventType="touchUpInside" id="CiQ-Pb-aPN"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Evs-Mb-lqb" userLabel="Separator">
-                    <rect key="frame" x="0.0" y="332.5" width="375" height="2"/>
-                    <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="2" id="7vd-z1-uRd"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-Yg-FPs" userLabel="Separator">
-                    <rect key="frame" x="186.5" y="0.0" width="2" height="667"/>
-                    <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="2" id="ohw-2W-vlo"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwj-SO-Zfh">
-                    <rect key="frame" x="0.0" y="0.0" width="188.5" height="30"/>
+                    <rect key="frame" x="0.0" y="20" width="187.5" height="40"/>
                     <color key="backgroundColor" red="0.14455955619999999" green="0.40339107790000001" blue="0.59890172100000005" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="xNo-cu-AWE"/>
+                        <constraint firstAttribute="height" constant="40" id="xNo-cu-AWE"/>
                     </constraints>
                     <state key="normal" title="Reset All">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,11 +74,10 @@ random image</string>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etI-DM-kN7" userLabel="Download all">
-                    <rect key="frame" x="187.5" y="0.0" width="188.5" height="30"/>
+                    <rect key="frame" x="187.5" y="20" width="187.5" height="40"/>
                     <color key="backgroundColor" red="0.14455955619999999" green="0.40339107790000001" blue="0.59890172100000005" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="9gj-Ob-4pS"/>
-                        <constraint firstAttribute="height" constant="30" id="Clv-Gi-33f"/>
+                        <constraint firstAttribute="height" constant="40" id="Clv-Gi-33f"/>
                     </constraints>
                     <state key="normal" title="Download All">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,7 +87,7 @@ random image</string>
                     </connections>
                 </button>
                 <progressView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="KGv-oA-sDm">
-                    <rect key="frame" x="85" y="200" width="205" height="2.5"/>
+                    <rect key="frame" x="85" y="332.5" width="205" height="3"/>
                     <color key="tintColor" red="0.14455955619999999" green="0.40339107790000001" blue="0.59890172100000005" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="XAJ-FZ-eBC"/>
@@ -120,45 +95,53 @@ random image</string>
                     <color key="progressTintColor" red="0.14455955619999999" green="0.40339107790000001" blue="0.59890172100000005" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="trackTintColor" red="0.67807614803314209" green="0.67805588245391846" blue="0.67806732654571533" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                 </progressView>
+                <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="X9R-XJ-dBT" userLabel="2">
+                    <rect key="frame" x="187.5" y="60" width="187.5" height="303.5"/>
+                    <state key="normal">
+                        <string key="title">Press to download
+random image</string>
+                        <color key="titleColor" red="0.14455955619999999" green="0.40339107790000001" blue="0.59890172100000005" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="downloadFile:" destination="-1" eventType="touchUpInside" id="ZRv-WR-Pfx"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="eOc-Yg-FPs" secondAttribute="bottom" id="15b-0D-J1P"/>
-                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2HJ-jb-0AR"/>
-                <constraint firstAttribute="bottom" secondItem="HYB-uk-3YL" secondAttribute="bottom" id="38g-D4-djl"/>
+                <constraint firstItem="EZ0-mg-art" firstAttribute="top" secondItem="dwj-SO-Zfh" secondAttribute="bottom" id="0xV-n1-pfn"/>
+                <constraint firstItem="X9R-XJ-dBT" firstAttribute="height" secondItem="EZ0-mg-art" secondAttribute="height" id="1xH-QS-7eD"/>
+                <constraint firstItem="HYB-uk-3YL" firstAttribute="leading" secondItem="Fyk-Ea-lyw" secondAttribute="trailing" id="3gr-3O-Rcn"/>
                 <constraint firstAttribute="trailing" secondItem="KGv-oA-sDm" secondAttribute="trailing" constant="85" id="5E6-wI-zdF"/>
-                <constraint firstItem="eOc-Yg-FPs" firstAttribute="leading" secondItem="EZ0-mg-art" secondAttribute="trailing" id="6Qy-u8-mWq"/>
-                <constraint firstAttribute="trailing" secondItem="HYB-uk-3YL" secondAttribute="trailing" id="7fF-zy-5Mp"/>
-                <constraint firstItem="Evs-Mb-lqb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BSc-7B-cY4"/>
-                <constraint firstItem="HYB-uk-3YL" firstAttribute="leading" secondItem="eOc-Yg-FPs" secondAttribute="trailing" id="DGg-GR-gFU"/>
-                <constraint firstItem="eOc-Yg-FPs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DVd-Kp-l8d"/>
-                <constraint firstItem="etI-DM-kN7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FgW-AO-3fp"/>
+                <constraint firstAttribute="trailing" secondItem="HYB-uk-3YL" secondAttribute="trailing" id="6re-OL-rgh"/>
+                <constraint firstItem="X9R-XJ-dBT" firstAttribute="top" secondItem="etI-DM-kN7" secondAttribute="bottom" id="7zH-WH-Ahh"/>
+                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="width" secondItem="EZ0-mg-art" secondAttribute="width" id="9oo-0R-knx"/>
+                <constraint firstItem="HYB-uk-3YL" firstAttribute="width" secondItem="EZ0-mg-art" secondAttribute="width" id="BDQ-6p-nl9"/>
+                <constraint firstItem="etI-DM-kN7" firstAttribute="top" secondItem="Nff-QJ-3mf" secondAttribute="top" id="CiY-w2-4lC"/>
+                <constraint firstItem="X9R-XJ-dBT" firstAttribute="leading" secondItem="EZ0-mg-art" secondAttribute="trailing" id="Cr1-da-NGE"/>
                 <constraint firstItem="KGv-oA-sDm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="85" id="Fgk-a5-ZK2"/>
-                <constraint firstAttribute="trailing" secondItem="Evs-Mb-lqb" secondAttribute="trailing" id="Hzt-PT-hT1"/>
-                <constraint firstItem="eOc-Yg-FPs" firstAttribute="leading" secondItem="Fyk-Ea-lyw" secondAttribute="trailing" id="Noq-q1-y5Y"/>
-                <constraint firstItem="EZ0-mg-art" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="O1b-iy-GLG"/>
-                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="top" secondItem="Evs-Mb-lqb" secondAttribute="bottom" id="Pdl-hL-Ot7"/>
-                <constraint firstAttribute="bottom" secondItem="Fyk-Ea-lyw" secondAttribute="bottom" id="QQu-ze-6Si"/>
+                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="height" secondItem="EZ0-mg-art" secondAttribute="height" id="IXp-yF-R2K"/>
+                <constraint firstItem="HYB-uk-3YL" firstAttribute="bottom" secondItem="Nff-QJ-3mf" secondAttribute="bottom" id="Nav-74-es0"/>
                 <constraint firstItem="dwj-SO-Zfh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RN4-L7-dDl"/>
                 <constraint firstItem="KGv-oA-sDm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-39" id="RmH-HS-8ZK"/>
-                <constraint firstItem="etI-DM-kN7" firstAttribute="leading" secondItem="EZ0-mg-art" secondAttribute="trailing" constant="1" id="T5q-Sm-GJZ"/>
-                <constraint firstItem="X9R-XJ-dBT" firstAttribute="leading" secondItem="dwj-SO-Zfh" secondAttribute="trailing" id="UNE-5e-iiz"/>
                 <constraint firstItem="KGv-oA-sDm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Un7-6s-Y6T"/>
-                <constraint firstAttribute="trailing" secondItem="etI-DM-kN7" secondAttribute="trailing" constant="-1" id="VpQ-ST-wY1"/>
-                <constraint firstItem="Evs-Mb-lqb" firstAttribute="top" secondItem="EZ0-mg-art" secondAttribute="bottom" id="YrD-ji-wtV"/>
-                <constraint firstItem="eOc-Yg-FPs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZdB-m2-5z5"/>
-                <constraint firstItem="dwj-SO-Zfh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZgA-dC-rTd"/>
+                <constraint firstItem="HYB-uk-3YL" firstAttribute="height" secondItem="EZ0-mg-art" secondAttribute="height" id="VUT-7L-bOe"/>
+                <constraint firstAttribute="trailing" secondItem="etI-DM-kN7" secondAttribute="trailing" id="VpQ-ST-wY1"/>
+                <constraint firstItem="etI-DM-kN7" firstAttribute="width" secondItem="dwj-SO-Zfh" secondAttribute="width" id="Yey-iu-YM2"/>
+                <constraint firstItem="X9R-XJ-dBT" firstAttribute="width" secondItem="EZ0-mg-art" secondAttribute="width" id="a4q-Lu-ev4"/>
+                <constraint firstItem="Nff-QJ-3mf" firstAttribute="trailing" secondItem="X9R-XJ-dBT" secondAttribute="trailing" id="b7b-cH-yEj"/>
+                <constraint firstItem="HYB-uk-3YL" firstAttribute="top" secondItem="X9R-XJ-dBT" secondAttribute="bottom" id="bLG-oK-8QN"/>
                 <constraint firstAttribute="trailing" secondItem="dwj-SO-Zfh" secondAttribute="trailing" id="hmi-hT-DYT"/>
-                <constraint firstItem="HYB-uk-3YL" firstAttribute="top" secondItem="Evs-Mb-lqb" secondAttribute="bottom" id="nUz-Gu-l4K"/>
-                <constraint firstItem="EZ0-mg-art" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qoa-cX-ffb"/>
-                <constraint firstItem="KGv-oA-sDm" firstAttribute="top" secondItem="etI-DM-kN7" secondAttribute="bottom" constant="170" id="qt8-bc-epH"/>
-                <constraint firstItem="X9R-XJ-dBT" firstAttribute="leading" secondItem="eOc-Yg-FPs" secondAttribute="trailing" id="tly-45-vMG"/>
-                <constraint firstItem="X9R-XJ-dBT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="w7X-kf-f0s"/>
-                <constraint firstItem="Evs-Mb-lqb" firstAttribute="top" secondItem="X9R-XJ-dBT" secondAttribute="bottom" id="wC7-zo-0Pq"/>
-                <constraint firstItem="Evs-Mb-lqb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yE6-hI-gCf"/>
-                <constraint firstAttribute="trailing" secondItem="X9R-XJ-dBT" secondAttribute="trailing" id="yrn-dP-Nbq"/>
+                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="bottom" secondItem="Nff-QJ-3mf" secondAttribute="bottom" id="jo5-If-mZ4"/>
+                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="leading" secondItem="Nff-QJ-3mf" secondAttribute="leading" id="lOD-hL-7pd"/>
+                <constraint firstItem="Fyk-Ea-lyw" firstAttribute="top" secondItem="EZ0-mg-art" secondAttribute="bottom" id="lec-a5-03o"/>
+                <constraint firstItem="EZ0-mg-art" firstAttribute="leading" secondItem="Nff-QJ-3mf" secondAttribute="leading" id="pKa-yS-qYn"/>
+                <constraint firstItem="KGv-oA-sDm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pmp-s2-bd1"/>
+                <constraint firstItem="etI-DM-kN7" firstAttribute="leading" secondItem="dwj-SO-Zfh" secondAttribute="trailing" id="xdj-Lk-5Vi"/>
+                <constraint firstItem="dwj-SO-Zfh" firstAttribute="top" secondItem="Nff-QJ-3mf" secondAttribute="top" id="zEw-sH-58v"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Nff-QJ-3mf"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="hmi-hT-DYT"/>
@@ -166,7 +149,7 @@ random image</string>
                     <exclude reference="Un7-6s-Y6T"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="191" y="289"/>
+            <point key="canvasLocation" x="189.59999999999999" y="288.30584707646182"/>
         </view>
     </objects>
 </document>

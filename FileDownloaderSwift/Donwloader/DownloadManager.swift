@@ -46,9 +46,7 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate
     {
         do {
             try FileManager.default.moveItem(at: path, to: destinationUrl!)
-        } catch {
-            
-        }
+        } catch {}
     }
     
     //MARK Public funcs
@@ -71,15 +69,15 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL)
     {
-        self.moveToDestinationFromPath(location)
+        moveToDestinationFromPath(location)
         downloadTask.cancel()
-        self.closeSession()
+        closeSession()
         
-        self.delegate.downloadedFileAtPath(destinationUrl!)
+        delegate.downloadedFileAtPath(destinationUrl!)
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64)
     {
-        self.delegate.downloadedMbytesFromTotal(totalBytesWritten/1000, total: totalBytesExpectedToWrite/1000)
+        delegate.downloadedMbytesFromTotal(totalBytesWritten/1000, total: totalBytesExpectedToWrite/1000)
     }
 }
