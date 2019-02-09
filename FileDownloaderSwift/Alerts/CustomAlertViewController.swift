@@ -3,7 +3,7 @@
 //  FileDownloaderSwift
 //
 //  Created by Usue on 12/12/15.
-//  Copyright © 2015 Usue. All rights reserved.
+//  Copyright © 2019 Usue. All rights reserved.
 //
 
 import UIKit
@@ -46,12 +46,13 @@ class CustomAlertViewController: UIAlertController
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: {
             (action:UIAlertAction!) in self.delegate.pressedAlertButton(AlertButtons.kCancel)
         })
+        
         let acceptAction = UIAlertAction(title: "Download", style: .default, handler: {
             (action:UIAlertAction!) in self.delegate.pressedAlertButton(AlertButtons.kAccept)
         })
         
-        self.addAction(acceptAction)
-        self.addAction(cancelAction)
-        self.delegate.present(self, animated: true, completion: nil)
+        addAction(acceptAction)
+        addAction(cancelAction)
+        delegate.present(self, animated: true, completion: nil)
     }
 }

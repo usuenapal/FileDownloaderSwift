@@ -3,7 +3,7 @@
 //  FileDownloaderSwift
 //
 //  Created by Usue on 14/12/15.
-//  Copyright © 2015 Usue. All rights reserved.
+//  Copyright © 2019 Usue. All rights reserved.
 //
 
 import UIKit
